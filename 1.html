@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض التقييمات</title>
+</head>
+<body>
+
+<h2>التقييمات المحفوظة</h2>
+
+<?php
+// افتح ملف التقييمات المحفوظة
+$file_path = "ratings.txt";
+if (file_exists($file_path)) {
+    // قراءة التقييمات من الملف
+    $ratings = file_get_contents($https://avndesa.000webhostapp.com/display_ratings.php);
+    // عرض التقييمات إذا وجدت
+    if (!empty($ratings)) {
+        echo "<p>$ratings</p>";
+    } else {
+        echo "<p>لا يوجد تقييمات حتى الآن.</p>";
+    }
+} else {
+    echo "<p>لم يتم العثور على ملف التقييمات.</p>";
+}
+?>
+
+</body>
+</html>
